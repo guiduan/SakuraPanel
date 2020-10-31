@@ -5,6 +5,7 @@ use SakuraPanel;
 
 define("ROOT", realpath(__DIR__ . "/../../"));
 
+include(ROOT . "/configuration.php");
 include(ROOT . "/core/Database.php");
 
 $conn = null;
