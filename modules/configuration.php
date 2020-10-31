@@ -69,7 +69,7 @@ $ss = Database::toArray(Database::search("nodes", Array("group" => "{$rs['group'
 						<p><b>选择服务器</b></p>
 						<p><select class="form-control" id="server" <?php echo count($ss) == 0 ? "disabled" : ""; ?>>
 							<?php
-							echo "<option>选择服务器</option>";
+							echo "<option value=''>选择服务器</option>";
 							foreach($ss as $si) {
 								$selected = $sel_server == $si[0] ? "selected" : "";
 								echo "<option value='{$si[0]}' {$selected}>{$si[1]} ({$si[3]})</option>";
@@ -125,7 +125,9 @@ $ss = Database::toArray(Database::search("nodes", Array("group" => "{$rs['group'
 prettyPrint();
 window.onload = function() {
 	$('#server').change(function() {
-		location = "/?page=panel&module=configuration&server=" + $(this).children('option:selected').val();
+		if($(this).children('option:selected').val() != ''){
+			location = "/?page=panel&module=configuration&server=" + $(this).children('option:selected').val();
+		}
 	});
 }
 </script>
