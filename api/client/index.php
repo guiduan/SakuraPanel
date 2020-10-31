@@ -21,7 +21,11 @@ $token = $_GET['token'];
 $sel_server = $_GET['server'];
 $rs = Database::querySingleLine("tokens", ["token" => $token]);
 if($rs) {
-  var_dump($pm->getUserProxiesConfig($rs['username'], $sel_server));
+  $ss = $pm->getUserProxiesConfig($rs['username'], $sel_server);
+  if(is_string($ss)) {
+	  Header("Content-Type: text/plain");
+		exit($ss);
+	} 
 }
 //$sel_server=$_GET['server']
 
