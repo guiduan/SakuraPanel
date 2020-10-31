@@ -21,7 +21,7 @@ $token = $_GET['token'];
 $sel_server = $_GET['server'];
 $rs = Database::querySingleLine("tokens", ["token" => $token]);
 if($rs) {
-  $pm->getUserProxiesConfig($rs['username'], $sel_server);
+  $pm->getUserProxiesConfig($rs['username'], '3');
 }
 //$sel_server=$_GET['server']
 
