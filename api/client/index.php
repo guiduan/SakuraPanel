@@ -16,7 +16,13 @@ include(ROOT . "/core/ProxyManager.php");
 
 $pm = new ProxyManager();
 $nm = new NodeManager();
-$user=$_GET['user'];
-$sel_server=$_GET['server']
+$token=$_GET['token'];
+$rs = Database::querySingleLine("tokens", ["token" => $token]);
+if($rs){
+var_dump($rs);
+}else{
 
-$pm->getUserProxiesConfig($user, $sel_server)
+}
+//$sel_server=$_GET['server']
+
+//$pm->getUserProxiesConfig($user, $sel_server);
