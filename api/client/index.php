@@ -7,8 +7,16 @@ define("ROOT", realpath(__DIR__ . "/../../"));
 
 include(ROOT . "/core/Database.php");
 
-//$pm = new ProxyManager();
-$userToken=$_GET['token'];
-$rs = Database::querySingleLine("tokens", ["token" => $userToken]);
+$conn = null;
+$db = new SakuraPanel\Database();
 
-var_dump($rs);
+include(ROOT . "/core/UserManager.php");
+include(ROOT . "/core/NodeManager.php");
+include(ROOT . "/core/ProxyManager.php");
+
+$pm = new ProxyManager();
+$nm = new NodeManager();
+$user=$_GET['user'];
+$sel_server=$_GET['server']
+
+$pm->getUserProxiesConfig($user, $sel_server)
