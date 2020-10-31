@@ -282,11 +282,11 @@ class ProxyManager {
 		$um = new SakuraPanel\UserManager();
 		
 		if(!$um->checkUserExist($user)) {
-			return Array(false, "用户不存在");
+			return "用户不存在";
 		}
 		
 		if(!$nm->isNodeExist($node)) {
-			return Array(false, "节点不存在");
+			return "节点不存在";
 		}
 		
 		// 获取节点信息和用户 Token
