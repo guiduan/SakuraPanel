@@ -313,7 +313,10 @@ EOF;
 		foreach($list as $item) {
 			
 			// 如果不是此节点的忽略
-			//if(Intval($item[16]) !== Intval($node) || $item[14] !== "0") continue;
+			var_dump(Intval($item[16]));
+			var_dump(Intval($node));
+			exit;
+			if(Intval($item[16]) !== Intval($node) || $item[14] !== "0") continue;
 			
 			// 防止出现 Bug
 			$local_ip   = $item[4] == "" ? "127.0.0.1" : $item[4];
