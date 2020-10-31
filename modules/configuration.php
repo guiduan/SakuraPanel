@@ -69,7 +69,7 @@ $ss = Database::toArray(Database::search("nodes", Array("group" => "{$rs['group'
 						<p><b>选择服务器</b></p>
 						<p><select class="form-control" id="server" <?php echo count($ss) == 0 ? "disabled" : ""; ?>>
 							<?php
-							echo "<option value=''>选择服务器</option>";
+							echo "<option>选择服务器</option>";
 							foreach($ss as $si) {
 								$selected = $sel_server == $si[0] ? "selected" : "";
 								echo "<option value='{$si[0]}' {$selected}>{$si[1]} ({$si[3]})</option>";
