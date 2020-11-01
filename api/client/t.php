@@ -9,7 +9,7 @@ $arr = [
                  'dns_server' => '114.114.114.114'
                 ],
   '[rdp]' => ['privilege_mode' => true,
-              'type' = 'tcp',
+              'type' => 'tcp',
               'local_ip' => '0.0.0.0',
               'local_port' => 3389,
               'remote_port' => 3389,
